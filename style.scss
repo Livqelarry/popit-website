@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: montserrat-thin;
   src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
@@ -32,13 +36,20 @@
   column-gap: 0.75rem;
   justify-content: center;
 }
+@mixin hover-effect {
+  opacity: 0.75;
+  transform: scale(0.9);
+}
+
 // variables
 $orange: #ffbf69;
+$orange-dark: #fd7f20;
 $light-blue: #cbf3f0;
 $font-thin: montserrat-thin;
 $font-normal: montserrat-normal;
 $font-bold: montserrat-bold;
 $font-black: montserrat-black;
+
 .page {
   margin: 0;
   font-family: $font-normal, sans-serif;
@@ -55,6 +66,10 @@ $font-black: montserrat-black;
   background-color: $light-blue;
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    @include hover-effect();
+  }
   &__text {
     color: black;
     font-family: montserrat-bold;
@@ -62,6 +77,12 @@ $font-black: montserrat-black;
   }
   &--big &__text {
     font-size: 24px;
+    @media (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+  &--orange-dark {
+    background-color: $orange-dark;
   }
 }
 
@@ -96,7 +117,11 @@ $font-black: montserrat-black;
     color: black;
     font-size: 18px;
     text-decoration: none;
-    font-family: montserrat-black, sans-serif;
+    font-family: $font-bold;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      @include hover-effect();
+    }
   }
   &__nav {
     display: flex;
@@ -104,7 +129,12 @@ $font-black: montserrat-black;
     &-link {
       color: black;
       text-decoration: none;
+      font-family: $font-bold;
       font-size: 16px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        @include hover-effect();
+      }
       @media (max-width: 576px) {
         padding: 0.75rem 0;
         border-bottom: 1px solid white;
@@ -115,7 +145,7 @@ $font-black: montserrat-black;
     @media (max-width: 576px) {
       box-sizing: border-box;
       flex-direction: column;
-      background-color: #fd7f20;
+      background-color: $orange-dark;
       position: absolute;
       left: 0;
       top: -20px;
@@ -169,11 +199,15 @@ $font-black: montserrat-black;
   }
   &__decs {
     grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     @media (max-width: 576px) {
       order: 2;
       grid-column: span 12;
       text-align: center;
       padding-bottom: 3rem;
+      align-items: center;
     }
   }
   &__title {
@@ -197,6 +231,9 @@ $font-black: montserrat-black;
     color: white;
     margin-top: 0;
     margin-bottom: 1rem;
+    @media (max-width: 576px) {
+      font-size: 16px;
+    }
   }
   &__img {
     grid-column: span 6;
@@ -265,6 +302,7 @@ $font-black: montserrat-black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1rem;
   }
   &__card-img {
     width: 50%;
@@ -274,6 +312,7 @@ $font-black: montserrat-black;
     font-family: $font-bold;
     margin: 0;
     margin-top: 24px;
+    margin-bottom: 1rem;
     text-align: center;
   }
 }
