@@ -96,7 +96,7 @@
         </div>
       </section>
 
-      <!-- section rules the game -->
+      <!-- section article-->
       <section class="article">
         <div class="article__container">
           <div class="article__decs">
@@ -127,6 +127,14 @@
     </footer>
 
     <!-- javascript -->
-    <script src="./script.js"></script>
+    <script>
+      const toggleMenu = () => {
+        document.getElementById("navTriggerMob").onclick = () => {
+          document.getElementById("nav").classList.toggle("header__nav--show");
+        };
+      };
+
+      toggleMenu();
+    </script>
   </body>
 </html>

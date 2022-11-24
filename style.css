@@ -60,21 +60,6 @@ html {
   background-color: #fd7f20;
 }
 
-.card-product {
-  width: 100%;
-  padding: 2rem;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-.card-product__img {
-  width: 160px;
-}
-.card-product__title {
-  text-align: center;
-}
-
 .header {
   background-color: #ffbf69;
 }
@@ -176,6 +161,7 @@ html {
 
 .hero {
   background-color: #ffbf69;
+  transition: background-color 0.5s ease-in-out;
 }
 .hero__container {
   align-items: center;
@@ -252,6 +238,9 @@ html {
   }
 }
 
+.about {
+  background-color: white;
+}
 .about__container {
   max-width: 1140px;
   padding: 5rem 1.5rem;
@@ -331,6 +320,7 @@ html {
 }
 
 .article {
+  background-color: white;
   background-image: url("./assets/img/bg-round-orange.webp");
   background-repeat: no-repeat;
   background-size: cover;

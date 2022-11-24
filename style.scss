@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
+// fonts
 @font-face {
   font-family: montserrat-thin;
   src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
@@ -86,22 +87,6 @@ $font-black: montserrat-black;
   }
 }
 
-.card-product {
-  width: 100%;
-  padding: 2rem;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  &__img {
-    width: 160px;
-  }
-  &__title {
-    text-align: center;
-  }
-}
-
-// header
 .header {
   background-color: #ffbf69;
   &__container {
@@ -190,6 +175,7 @@ $font-black: montserrat-black;
 
 .hero {
   background-color: $orange;
+  transition: background-color 0.5s ease-in-out;
   &__container {
     align-items: center;
     @include container();
@@ -254,6 +240,7 @@ $font-black: montserrat-black;
 }
 
 .about {
+  background-color: white;
   &__container {
     @include container();
     @include grid-system();
@@ -318,6 +305,7 @@ $font-black: montserrat-black;
 }
 
 .article {
+  background-color: white;
   background-image: url("./assets/img/bg-round-orange.webp");
   background-repeat: no-repeat;
   background-size: cover;
